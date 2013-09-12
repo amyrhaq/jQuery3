@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  	//SERIALIZE
+  	$("button").click(function(){
+    	$("div").text($("form").serialize());
+	});
+    //FOCUS
+    $("input").focus(function(){
+    	$("span").css("display","inline").fadeOut(3000);
+  	});
+});
+</script>
+<style>
+span
+{
+	display:none;
+}
+</style>
+</head>
+<body>
+
+<input>
+<span>Look at me while I fade out</span>
+<p>Click the input field above</p>
+
+<form action="">
+First name: <input type="text" name="FirstName" value="Mickey" /><br>
+Last name: <input type="text" name="LastName" value="Mouse" /><br>
+</form>
+
+<button>Serialize form values</button>
+<div></div>
+
+</body>
+</html>
