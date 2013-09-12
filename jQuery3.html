@@ -5,36 +5,210 @@
 </script>
 <script>
 $(document).ready(function(){
-  	//SERIALIZE
-  	$("button").click(function(){
-    	$("div").text($("form").serialize());
-	});
+    //ADD CLASS
+    $("#btn2").click(function(){
+      $('p').addClass("intro");
+    });
+    //AFTER
+    $('#btn3').click(function(){
+      $('p').after('<p>This puts text after</p>');
+    });
+    //APPEND
+    $('#btn4').click(function(){
+      $('p').append('<b>Append Text</b>');
+    });
+    $('#btn5').click(function(){
+      $('ol').append('<li>Append list</li>');
+    });
+    //ATTR:changes the size of a pic
+    $('#btn6').click(function(){
+      $('img').attr('width','500');
+    });
+    //BEFORE
+    $('#btn7').click(function(){
+      $('p').before('This puts text before');
+    });
+    //HTML
+    $('#btn8').click(function(){
+      $('p').html('<b>This puts HTML in</b>');
+    });
+    //TEXT
+    $('#btn9').click(function(){
+      $('p').text('This replaces the TEXT');
+    });
+    //VAL
+    $('#btn10').click(function(){
+      $('input:text').val('See it changed');
+    });
+    //TOGGLE
+    $('#btn11').click(function(){
+      $('p').toggle();
+    });
+    //HIDE
+    $('#btn12').click(function(){
+      $('p').hide();
+    });
+    //SHOW
+    $('#btn13').click(function(){
+      $('p').show();
+    });
+    //SLIDEDOWN
+    $('#btn14').click(function(){
+      $('p').slideDown();
+    });
+    //SLIDETOGGLE
+    $('#btn15').slideToggle(function(){
+        $('p').hide(5000);
+    });     
+    //SLIDEUP
+    $('#btn16').click(function(){
+        $('p.second_p').slideUp();
+    });
+    //FADEOUT
+    $('#btn17').click(function(){
+        $('p.third_p').fadeOut(3000);
+    });
+    //FADEIN
+    $('#btn18').click(function(){
+        $('p.third_p').fadeIn(3000);
+    });
+    //SUBMIT
+    $('#test_form').submit(function(){
+    var email = $('#email').val();
+    var password = $('#password').val();
+    $('#message_box').html("<marquee>Email you entered was " + email + "</marquee>"+"<marquee>Password you entered was " + password + "</marquee>");
+  return false;
+  });
+    //SERIALIZE
+    $("#btn1").click(function(){
+      $("div").text($("form").serialize());
+  });
     //FOCUS
     $("input").focus(function(){
-    	$("span").css("display","inline").fadeOut(3000);
-  	});
+      $("span").css("display","inline").fadeOut(5000);
+    });
+    //CLICK
+    $("p").click(function(){
+      alert("The paragraph was clicked.");
+  });
 });
 </script>
+
+<!-- BELONGS TO FOCUS -->
 <style>
-span
-{
-	display:none;
-}
+  span
+  {
+    display:none;
+  }
+</style>
+
+<!-- BELONGS TO ADD A CLASS -->
+<style>
+  .intro
+  {
+    font-size: 150%;
+    color:  red;
+  }
 </style>
 </head>
 <body>
 
-<input>
-<span>Look at me while I fade out</span>
-<p>Click the input field above</p>
-
+<!-- BELONGS TO SERIALIZE -->
 <form action="">
 First name: <input type="text" name="FirstName" value="Mickey" /><br>
 Last name: <input type="text" name="LastName" value="Mouse" /><br>
 </form>
-
-<button>Serialize form values</button>
+<button id='btn1'>Serialize form values</button>
 <div></div>
 
+<!-- BELONGS TO FOCUS -->
+<input>
+<span>Look at me while I fade out</span>
+<p>Click the input field above</p>
+
+<!-- BELONGS TO ADD A CLASS -->
+<h1>This is a heading</h1>
+<p>This is a paragraph</p>
+<p =id'first_p'>This is another paragraph</p>
+<button id='btn2'>Add a class name to the first p element</button>
+
+<!-- BELONGS TO AFTER-->
+<button id='btn3'>Insert content after each p element</button>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<!-- BELONGS TO APPEND -->
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<ol>
+  <li>List item 1</li>
+  <li>List item 1</li>
+  <li>List item 1</li>
+</ol>
+<button id='btn4'>Append text</button>
+<button id='btn5'>Append list item</button>
+<BR>
+<BR>
+
+<!-- BELONGS TO ATTR -->
+<img src='smile.gif' alt=smile width='234' height='213'>
+<br>
+<button id='btn6'>Set the width attribute of the image</button>
+<BR>
+<BR>
+<!-- BELONGS TO BEFORE -->
+<button id='btn7'>Puts text before paragraph</button>
+<p>This is a paragraph.</p>
+<BR>
+<BR>
+<!-- BELONGS TO HTML -->
+<button id='btn8'>Change content of all p elements</button>
+<p>This is a paragraph.</p>
+<BR>
+<BR>
+<!-- BELONGS TO TEXT -->
+<button id='btn9'>Change text of all p elements</button>
+<p>This is a paragraph.</p>
+<BR>
+<BR>
+<!-- BELONGS TO VAL -->
+<p>Name: <input type="text" name="user"></p>
+<button id='btn10'>Changes whatever you typed in the field boxes above</button>
+<BR>
+<BR>
+<!-- BELONGS TO TOGGLE -->
+<button id="btn11">Toggle all paragraphs</button>
+<BR>
+<BR>
+<!-- BELONGS TO HIDE -->
+<button id="btn12">Hide all paragraphs</button>
+
+<!-- BELONGS TO SHOW -->
+<button id="btn13">Show all paragraphs</button>
+
+<!-- SLIDEDOWN THE PARAGRAPH -->
+<h2>slideDown, slideUp, slideToggle</h2>
+    <p class="second_p">Second paragraph to illustrate slide methods in jQuery. Second paragraph to illustrate slide methods in jQuery. Second paragraph to illustrate slide methods in jQuery. Second paragraph to illustrate slide methods in jQuery. Second paragraph to illustrate slide methods in jQuery</p>
+<!-- BELONGS TO SLIDEUP, SLIDEDOWN, SLIDETOGGLE -->
+    <button id="btn14">slideDown the paragraph</button>
+    <button id="btn15">slideUp the paragraph</button>
+    <button id="btn16">slideToggle the paragraph</button>
+
+    <!-- BELONGS TO FADEOUT, FADEIN -->
+<h2>fadeOut, fadeIn</h2>
+    <p class="third_p">Third paragraph to illustrate slide methods in jQuery</p>
+    <button id="btn17">fadeOut the paragraph</button>
+    <button id="btn18">fadeIn the paragraph</button>
+    
+    <!-- BELONGS TO SUBMIT -->
+<h2>Text Manipulation</h2>
+    <div id="message_box">
+
+    </div>
+    <form id="test_form">
+      Email: <input type="text" id="email" name="email" placeholder="enter email address"/>
+      PW:<input type="password" id="password" name="password" placeholder="enter password" value="" />
+      <input type="submit" value="Submit" />
+    </form>
 </body>
 </html>
